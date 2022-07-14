@@ -1,5 +1,5 @@
 ## Practical 1
-- P1Q1 
+- P1Q1 https://pastebin.com/WYCDnkZs
 - P1Q2 https://pastebin.com/5nDmfkfz
 - P1Q3
 ## Practical 2
