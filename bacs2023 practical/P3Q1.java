@@ -18,17 +18,30 @@ public class P3Q1 {
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter number of quiz...");
+        System.out.print("Enter number of quiz scores to process: ");
+        int size = sc.nextInt();
         
-        int score[] = new int[10], totalScore = 0;
+        int score[] = new int[size], scoreAbove = 0, scoreBelow = 0;
+        double totalScore = 0;
         
-        for(int i = 0; i < 5; i ++){
+        for(int i = 0; i < size; i ++){
             System.out.print("Score "+(i+1)+": ");
             score[i] = sc.nextInt();
             totalScore += score[i];
         }
+        for(int i = 0; i < size; i ++){
+            if(score[i] >= totalScore/size){
+                scoreAbove++;
+            } else if (score[i] < totalScore/size){
+                scoreBelow++;
+            }
+        }
         
-        System.out.println("The average number is: " + totalScore/5);
+        System.out.println("\nResults");
+        System.out.println("======");
+        System.out.printf("The average number is: %.1f\n", totalScore/size);
+        System.out.printf("Number of scores above or equal to the average is %d \n", scoreAbove);
+        System.out.printf("Number of scores below the average is %d \n", scoreBelow);
     }
     
 }
