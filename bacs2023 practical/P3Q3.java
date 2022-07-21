@@ -39,10 +39,10 @@ public class P3Q2 {
         }
         
         System.out.println("\nYour output is:");
-        System.out.printf("%-22s%-15s%10s\n","Denomination (RM)","Quantity","Value (RM)");
+        System.out.printf("%-22s%-15s%9s\n","Denomination (RM)","Quantity","Value (RM)");
         for(int j = 0; j < 6; j++){
             if(num[j] != 0){
-                System.out.printf("%12d%13s%-7d%12d\n",deno[j],"",num[j],num[j]*deno[j]);
+                System.out.printf("%12d%13s%-7d%14d\n",deno[j],"",num[j],num[j]*deno[j]);
                 total += num[j]*deno[j];
             }
         }
