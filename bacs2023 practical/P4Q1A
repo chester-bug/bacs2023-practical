@@ -1,0 +1,60 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package p4q1;
+
+/**
+ *
+ * @author user1
+ */
+public class Employee {
+    
+    /**
+     * @param args the command line arguments
+     */
+    
+    String name;
+    double salary;
+    
+    Employee(){
+        name = "";
+        salary = 0.0;
+    }
+    
+    Employee(String employeeName){
+        name = employeeName;
+        salary = 0.0;
+    }
+    
+    Employee (String employeeName, double currentSalary){
+        name = employeeName;
+        salary = currentSalary;
+    }
+    
+    public void setName(String n){
+        name = n;
+    }
+    
+    public void setSalary(double s){
+        salary = s;
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+    public double getSalary(){
+        return salary;
+    }
+    
+
+    
+    
+    
+    void raiseSalary(double percent){
+        salary = salary + (salary * percent / 100.0);
+    }
+    
+    
+}
