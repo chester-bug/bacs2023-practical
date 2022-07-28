@@ -1,0 +1,83 @@
+
+import java.util.Scanner;
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+
+/**
+ *
+ * @author user1
+ */
+public class Student {
+    private String id;
+    private String name;
+    private int quizCount;
+    private int totalScore;
+    
+    public Student(){
+        id = "";
+        name = "";
+        quizCount = 0;
+        totalScore = 0;
+    }
+    
+    public Student(String id, String name){
+        this.id = id;
+        this.name = name;
+        quizCount = 0;
+        totalScore = 0;
+    }
+    
+    public void setName(String n){
+        this.name = n;
+    }
+    
+    public void setId(String id){
+        this.id = id;
+    }
+    
+    public String getId(){
+        return id;
+    }
+    
+    public void addQuiz(int score){
+        totalScore += score;
+        quizCount ++;
+    }
+    
+    public double getAverage(){
+        return ((double)this.totalScore/this.quizCount);
+    }
+    
+    public double getTotal(){
+        return (double)this.totalScore;
+    }
+
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        Student stud = new Student();
+        System.out.print("Enter name: ");
+        String name = sc.nextLine();
+        
+        stud.setName(name);
+        
+        System.out.print("Enter id: ");
+        String id = sc.nextLine();
+        stud.setId(id);
+        
+        char anymore;
+        do {
+            System.out.print("Enter score: ");
+            int score = sc.nextInt();
+            stud.addQuiz(score);
+            System.out.println("Anymore score (Y/N)? ");
+            anymore = sc.next().charAt(0);
+        } while (anymore != 'N');
+        
+        System.out.printf("\nTotal score = %.2f" , stud.getTotal());
+        System.out.printf("\nAverage score = %.2f" , stud.getAverage());
+
+    }
+}
