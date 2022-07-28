@@ -1,0 +1,51 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package p4q1;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author user1
+ */
+public class TestEmployee {
+    
+    public static void main(String[] Args){
+        Employee e1 = new Employee("Keeve", 2000);
+        Employee e2 = new Employee();
+        Employee e3 = new Employee("Talyor Swift");
+        
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter name for employee 2: ");
+        String name = sc.nextLine();
+        System.out.print("Enter salary for employee 2: ");
+        double salary = sc.nextDouble();
+        e2.setSalary(salary);
+        e2.setName("Hello world");
+        
+        
+        sc.nextLine();
+
+        System.out.print("Enter name for employee 3: ");
+        String name2 = sc.nextLine();
+        System.out.print("Enter salary for employee 3: ");
+        salary = sc.nextDouble();
+        e3.setName(name2);
+        e3.setSalary(salary);
+        
+        
+
+        if(e1.salary > e2.salary && e1.salary > e3.salary){
+            System.out.printf("The highest salary is %.2f for employee 1\n",e1.salary);
+        } else if (e2.salary > e3.salary && e2.salary > e1.salary){
+            System.out.printf("The highest salary is %.2f for employee 2\n",e2.salary);
+        } else {
+            System.out.printf("The highest salary is %.2f for employee 3\n",e3.salary);
+        }
+        
+        System.out.println("Total salary is " + (e2.getSalary() + e3.getSalary() + e1.getSalary()));
+    }
+}
